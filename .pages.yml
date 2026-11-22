@@ -1,0 +1,44 @@
+media:
+  input: assets/uploads
+  output: /Chronopolis/assets/uploads
+  rename: safe
+content:
+  - name: artigos
+    label: Publicações
+    type: collection
+    path: _artigos
+    filename: "{primary}.md"
+    format: yaml-frontmatter
+    view:
+      primary: title
+      fields: [title, category, date]
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: date
+        label: Data de publicação
+        type: date
+        required: true
+      - name: category
+        label: Categoria
+        type: select
+        required: true
+        options:
+          values: [História, Personagens, Galeria, Arquivo, Curiosidades]
+      - name: summary
+        label: Resumo do cartão
+        type: text
+        required: true
+      - name: image
+        label: Imagem de capa
+        type: image
+      - name: body
+        label: Texto da publicação
+        type: rich-text
+        required: true
+        options:
+          format: markdown

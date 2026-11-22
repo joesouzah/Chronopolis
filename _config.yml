@@ -1,0 +1,19 @@
+title: Chronopolis
+description: Arquivo independente de fã dedicado a preservar Chrono Trigger
+lang: pt-BR
+url: ""
+baseurl: "/Chronopolis"
+markdown: kramdown
+collections:
+  artigos:
+    output: true
+    permalink: /artigos/:name/
+defaults:
+  - scope:
+      path: ""
+      type: artigos
+    values:
+      layout: artigo
+exclude:
+  - README.md
+  - MIGRACAO.md
